@@ -15,7 +15,23 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'assembleDebug'
+    
 
+# Android signing
+# Sign and align Android APK files
+- task: AndroidSigning@3
+  inputs:
+    #apkFiles: '**/*.apk' 
+    #apksign: true # Optional
+    #apksignerKeystoreFile: # Required when apksign == True
+    #apksignerKeystorePassword: # Optional
+    #apksignerKeystoreAlias: # Optional
+    #apksignerKeyPassword: # Optional
+    #apksignerArguments: '--verbose' # Optional
+    #apksignerFile: # Optional
+    #zipalign: true # Optional
+    #zipalignFile: # Optional
+    
 - task: CopyFiles@2
   inputs:
     contents: '**/*.apk'
